@@ -53,6 +53,7 @@ public class MotorcycleProfile {
     public String getPlateNumber() { return plateNumber; }
     public void setPlateNumber(String plateNumber) { this.plateNumber = plateNumber; }
     public double getCurrentOdometerKm() { return currentOdometerKm; }
+    public void setCurrentOdometerKm(double currentOdometerKm) { this.currentOdometerKm = currentOdometerKm; }
     public void addDistanceKm(double km) { this.currentOdometerKm += km; }
     public double getOilIntervalKm() { return oilIntervalKm; }
     public void setOilIntervalKm(double oilIntervalKm) { this.oilIntervalKm = oilIntervalKm; }

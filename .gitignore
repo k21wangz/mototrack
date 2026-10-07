@@ -82,3 +82,8 @@ captures/
 Appfile
 releasePlayStore/*
 Gemfile.lock
+
+.env
+.env.*
+!.env.example
+
