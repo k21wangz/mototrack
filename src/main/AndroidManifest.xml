@@ -69,6 +69,13 @@ limitations under the License.
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"
         android:minSdkVersion="33" />
 
+    <!-- Touring Intercom & Network Permissions -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
     <application
         android:name=".Startup"
         android:allowBackup="true"
@@ -81,6 +88,11 @@ limitations under the License.
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/DayNightDynamicTheme"> <!-- Default for AppCompatActivities -->
+
+        <activity
+            android:name=".motorcycle.MotorcycleGarageActivity"
+            android:exported="false"
+            android:label="Garasi Motor &amp; Intercom" />
 
         <activity
             android:name=".publicapi.StartRecording"

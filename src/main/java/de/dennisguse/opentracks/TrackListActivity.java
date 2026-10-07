@@ -283,6 +283,11 @@ public class TrackListActivity extends AbstractTrackDeleteActivity implements Co
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.track_list_garage) {
+            startActivity(IntentUtils.newIntent(this, de.dennisguse.opentracks.motorcycle.MotorcycleGarageActivity.class));
+            return true;
+        }
+
         if (item.getItemId() == R.id.track_list_markers) {
             startActivity(IntentUtils.newIntent(this, MarkerListActivity.class));
             return true;

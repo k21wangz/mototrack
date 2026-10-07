@@ -225,6 +225,20 @@ public class TrackRecordingService extends Service implements TrackPointCreator.
             return;
         }
 
+        // Auto-update Motorcycle Garage Odometer
+        try {
+            if (trackRecordingManager != null && trackRecordingManager.getTrackStatistics() != null) {
+                de.dennisguse.opentracks.data.models.Distance dist = trackRecordingManager.getTrackStatistics().getTotalDistance();
+                if (dist != null && !dist.isInvalid() && dist.toKM() > 0) {
+                    de.dennisguse.opentracks.motorcycle.MotorcycleGarageManager garage =
+                            new de.dennisguse.opentracks.motorcycle.MotorcycleGarageManager(this);
+                    garage.addTouringDistance(dist.toKM());
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to update motorcycle garage distance", e);
+        }
+
         // Set recording status
         updateRecordingStatus(STATUS_DEFAULT);
 
